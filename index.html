@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark">
+  <title>Accessibility Screener</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main>
+    <h1>Accessibility Screener</h1>
+    <p>
+      This document is intended to be used in the context of the <a href="https://tag.w3.org/workmode/">TAG Design
+        Review process</a>.
+    </p>
+    <p>
+      This checklist is a quick mechanism to assess whether or not your proposed design may need specific accessibility
+      treatment whilst it's still in the early stages of development. These are the areas that may have the largest
+      effect on accessibility. Those questions where you answer "YES" generally need a documented strategy for managing
+      accessibility. If you don't know how to develop that strategy, you can ask us for help. Even if you are an expert
+      or have received expert help, review can still find gaps, so considering asking us for help.
+    </p>
+    <p>
+      Note that this checklist doesn't constitute an accessibility review, only a way to determine whether specific
+      consideration of accessibility might be required at the early stages of development.
+    </p>
+    <p>
+      The results of the screener will be filed as a new GitHub issue in your spec's repository, which you can link from
+      your design review request. The <a href="https://www.w3.org/WAI/about/groups/apawg/">Accessible Platform
+        Architectures WG</a> will be tagged on the screener results, so they are aware of upcoming changes to the web
+      platform, and can prepare for future horizontal review.
+    </p>
+
+    <form id="questionnaire">
+      <fieldset>
+        <legend>Document or spec being reviewed</legend>
+        <div class="grid-2c">
+          <label for="spec-name">Name:</label>
+          <input id="spec-name" type="text" name="spec-name" required />
+          <label for="spec-url">URL:</label>
+          <input id="spec-url" type="text" name="spec-url" aria-describedby="spec-url-desc" required />
+        </div>
+        <div id="spec-url-desc">
+          <p>Please ensure this dated, or for a specific commit, for example:</p>
+          <ul>
+            <li>
+              <p><a
+                  href="https://www.w3.org/TR/2025/CRD-compute-pressure-20250521">https://www.w3.org/TR/2025/CRD-compute-pressure-20250521</a>
+              </p>
+            </li>
+            <li>
+              <p><a
+                  href="https://github.com/guidou/webrtc-encoded-transform/blob/d9648352c57804b3bc805a3c649b3f2624025a7b/timestamps.md">https://github.com/guidou/webrtc-encoded-transform/blob/d9648352c57804b3bc805a3c649b3f2624025a7b/timestamps.md</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>GitHub repository of the document or spec being reviewed</legend>
+        <div class="inline-text-container">https://github.com/
+          <div class="inline-text-input">
+            <label for="org">Organisation:</label>
+            <input id="org" type="text" name="org" aria-describedby="org-desc" required />
+            <div id="org-desc">
+              e.g. "w3c"
+            </div>
+          </div>/<div class="inline-text-input">
+            <label for="repo">Repository:</label>
+            <input id="repo" type="text" name="repo" aria-describedby="repo-desc" required />
+            <div id="repo-desc">
+              e.g. "process"
+            </div>
+          </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          Does the design being proposed add any new visual user interface,
+          either to the web or user agent?
+        </legend>
+        <div id="q1Description">
+          <p><em>For example:</em></p>
+          <ul>
+            <li>a new type of UI element</li>
+            <li>a new mechanism for drawing custom user interfaces</li>
+            <li>a requirement for some user agent UI</li>
+          </ul>
+          <p>
+            <strong>Why?</strong> Visible interface components must be
+            carefully designed to ensure they are flexible enough to work in
+            a wide range of contexts, for example, when users require
+            extremely large fonts or access the web using assistive
+            technologies such as screen readers.
+          </p>
+        </div>
+        <input type="radio" id="q1_yes" name="q1" value="Yes" required aria-describedby="q1Description" />
+        <label for="q1_yes">Yes</label>
+        <input type="radio" id="q1_no" name="q1" value="No" required aria-describedby="q1Description" />
+        <label for="q1_no">No</label>
+        <input type="radio" id="q1_n/a" name="q1" value="N/A" required aria-describedby="q1Description" />
+        <label for="q1_n/a">N/A</label>
+
+        <details id="q2_details">
+          <summary>Follow-up: time-limited UI</summary>
+          <fieldset>
+            <legend>
+              If you answered YES to question 1, is the interface only
+              available for a given amount of time?
+            </legend>
+            <div id="q2Description">
+              <p><em>For example:</em></p>
+              <ul>
+                <li>a notification that disappears</li>
+              </ul>
+              <p>
+                <strong>Why?</strong> There are a range of reasons why a
+                time-limited visual interface may cause problems for users;
+                for example, screen reader users may not be aware that the
+                interface is available (or else struggle with too many
+                interruptions), or users may not be able to reach the
+                interface in time to interact with it before it disappears.
+              </p>
+            </div>
+            <input type="radio" id="q2_yes" name="q2" value="Yes" aria-describedby="q2Description" />
+            <label for="q2_yes">Yes</label>
+            <input type="radio" id="q2_no" name="q2" value="No" aria-describedby="q2Description" />
+            <label for="q2_no">No</label>
+            <input type="radio" id="q2_na" name="q2" value="N/A" aria-describedby="q2Description" />
+            <label for="q2_na">N/A</label>
+          </fieldset>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          Does the design being proposed add anything audible to the user
+          interface?
+        </legend>
+        <div id="q3Description">
+          <p><em>For example:</em></p>
+          <ul>
+            <li>a notification sound</li>
+            <li>a speech-based interface</li>
+            <li>an audio stream (alone or with other timed media)</li>
+          </ul>
+          <p>
+            <strong>Why?</strong> Audio cues may not always be accessible to
+            users due to disability or because the use of audio is not
+            appropriate for them. Depending on the purpose of the audio, it
+            may be appropriate to provide mechanisms to provide alternative
+            forms for the same information, to provide a redundant visual
+            cue, or allow configuration options.
+          </p>
+        </div>
+        <input type="radio" id="q3_yes" name="q3" value="Yes" required aria-describedby="q3Description" />
+        <label for="q3_yes">Yes</label>
+        <input type="radio" id="q3_no" name="q3" value="No" required aria-describedby="q3Description" />
+        <label for="q3_no">No</label>
+        <input type="radio" id="q3_n/a" name="q3" value="N/A" required aria-describedby="q3Description" />
+        <label for="q3_n/a">N/A</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          Is any user-presented data passed through a protocol if the spec
+          is API-only?
+        </legend>
+        <div id="q4Description">
+          <p><em>For example:</em></p>
+          <ul>
+            <li>
+              a transport mechanism for media, such as images, video, or
+              user strings, which may benefit from including an alternative
+              representation as part of the payload
+            </li>
+          </ul>
+          <p>
+            <strong>Why?</strong> Any given media type in isolation (for
+            example, speech) may be inaccessible or inappropriate for a
+            certain subset of users, so authors should be able to provide
+            alternative forms.
+          </p>
+        </div>
+        <input type="radio" id="q4_yes" name="q4" value="Yes" required aria-describedby="q4Description" />
+        <label for="q4_yes">Yes</label>
+        <input type="radio" id="q4_no" name="q4" value="No" required aria-describedby="q4Description" />
+        <label for="q4_no">No</label>
+        <input type="radio" id="q4_n/a" name="q4" value="N/A" required aria-describedby="q4Description" />
+        <label for="q4_n/a">N/A</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          Does the specification change how user input is interpreted at an
+          API level?
+        </legend>
+        <div id="q5Description">
+          <p><em>For example:</em></p>
+          <ul>
+            <li>a new type of input event</li>
+            <li>
+              a change to an existing mechanism for handling user input
+              (e.g., focus)
+            </li>
+          </ul>
+          <p>
+            <strong>Why?</strong> For users of assistive technology, user
+            input is often done by the assistive tool. This requires the
+            tool to be able to determine the type of input needed and, when
+            it is needed, to present an appropriate affordance to the user.
+          </p>
+        </div>
+        <input type="radio" id="q5_yes" name="q5" value="Yes" required aria-describedby="q5Description" />
+        <label for="q5_yes">Yes</label>
+        <input type="radio" id="q5_no" name="q5" value="No" required aria-describedby="q5Description" />
+        <label for="q5_no">No</label>
+        <input type="radio" id="q5_n/a" name="q5" value="N/A" required aria-describedby="q5Description" />
+        <label for="q5_n/a">N/A</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          Does the specification concern user input, potentially constrained
+          to a specific device or modality?
+        </legend>
+        <div id="q6Description">
+          <p><em>For example:</em></p>
+          <ul>
+            <li>
+              an API limited to a particular device such as a gamepad, touch
+              screen, or pen
+            </li>
+            <li>
+              a requirement for a user to perform a specific type of
+              interaction in order to enable some aspect of the API (e.g.,
+              User Activation dependent)
+            </li>
+          </ul>
+          <p>
+            <strong>Why?</strong> Specific devices may have unique
+            accessibility considerations, and limiting technology to a
+            particular device may unnecessarily exclude users if a more
+            general design could be created instead.
+          </p>
+        </div>
+        <input type="radio" id="q6_yes" name="q6" value="Yes" required aria-describedby="q6Description" />
+        <label for="q6_yes">Yes</label>
+        <input type="radio" id="q6_no" name="q6" value="No" required aria-describedby="q6Description" />
+        <label for="q6_no">No</label>
+        <input type="radio" id="q6_n/a" name="q6" value="N/A" required aria-describedby="q6Description" />
+        <label for="q6_n/a">N/A</label>
+      </fieldset>
+
+      <details id="q7_details">
+        <summary>Follow-up: authoring advice</summary>
+        <fieldset>
+          <legend>
+            If you answered YES to any of the above questions, does the
+            specification provide authoring advice?
+          </legend>
+          <div id="q7Description">
+            <p><em>For example:</em></p>
+            <ul>
+              <li>example code</li>
+              <li>guidance on best practices</li>
+            </ul>
+            <p>
+              <strong>Why?</strong> Authoring advice should be given in a way
+              that allows authors to write content that is accessible to users
+              and take advantage of relevant features in the API.
+            </p>
+          </div>
+          <input type="radio" id="q7_yes" name="q7" value="Yes" aria-describedby="q7Description" />
+          <label for="q7_yes">Yes</label>
+          <input type="radio" id="q7_no" name="q7" value="No" aria-describedby="q7Description" />
+          <label for="q7_no">No</label>
+          <input type="radio" id="q7_n/a" name="q7" value="N/A" aria-describedby="q7Description" required />
+          <label for="q7_n/a">N/A</label>
+        </fieldset>
+      </details>
+
+      <p>
+        <button type="submit" aria-describedby="submit-caveat">Create screener issue</button>
+        <span id="submit-caveat" class="note"><strong>Note:</strong> You will be able to review it before submitting
+          it.</span>
+      </p>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

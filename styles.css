@@ -1,0 +1,98 @@
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  font-size: 1.2em;
+  max-width: 60rem;
+  width: 96vw;
+  margin: auto;
+}
+
+fieldset {
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+button[type="submit"] {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid currentColor;
+  margin-inline-end: 0.5em;
+  border-radius: 4px;
+  cursor: pointer;
+  background: none;
+}
+
+legend {
+  font-weight: bold;
+}
+
+input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+fieldset :nth-child(2) p {
+  margin-top: 0;
+}
+
+fieldset details {
+  margin-top: 1rem;
+}
+
+details fieldset {
+  margin-top: 0.5em;
+}
+
+#q7_details {
+  margin-left: 0;
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.grid-2c {
+  display: grid;
+  grid-template-columns: min-content auto;
+  align-items: center;
+  gap: 1.5em;
+  margin-block-end: 1em;
+}
+
+.inline-text-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.inline-text-input {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+#org {
+  width: 7em;
+}
+
+#repo {
+  width: 17em;
+}
+
+#spec-url-desc,
+#org-desc,
+#repo-desc {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+*:focus,
+input:hover,
+button:hover,
+a:hover {
+  outline: 2px solid currentColor;
+  outline-offset: 0.15em;
+}
