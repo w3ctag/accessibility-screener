@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (selectedValue) {
-        markdown += `${count}. ${questionText} \n\n    Answer: ${selectedValue} \n\n`;
+        markdown += `${count}. ${questionText}\n\n    Answer: ${selectedValue}\n\n`;
         count++;
       }
     });
