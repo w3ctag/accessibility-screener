@@ -63,19 +63,7 @@ input[type="text"] {
   margin-block-end: 1em;
 }
 
-.inline-text-container {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-}
-
-.inline-text-input {
-  display: inline-flex;
-  flex-direction: column;
-}
-
-#spec-url-desc
-{
+#spec-url-desc {
   font-size: 0.9rem;
   margin-top: 0.25rem;
 }
