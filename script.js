@@ -87,20 +87,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  function validateGitHubRepoUrl(repoUrl) {
+    const regex = /^https:\/\/github\.com\/([^\/]+)\/([^\/\?]+)[\/\?]?/;
+    return regex.test(repoUrl);
+  }
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const issueTitle = encodeURIComponent(document.title);
     const issueBody = encodeURIComponent(generateMarkdown(form));
-    const githubOrg = document.getElementById("org").value.trim();
-    const githubRepo = document.getElementById("repo").value.trim();
+    const githubRepo = document.getElementById("spec-repo").value.trim();
 
-    if (!githubOrg || !githubRepo) {
-      alert("Please enter both GitHub organisation and repository.");
+    if (!githubRepo || !validateGitHubRepoUrl(githubRepo)) {
+      alert("Please enter a valid GitHub repository URL in the format 'https://github.com/<org>/<repo>'.");
       return;
     }
 
-    const issueUrl = `https://github.com/${githubOrg}/${githubRepo}/issues/new?title=${issueTitle}&body=${issueBody}&labels=a11y-tracker`;
+    const match = githubRepo.match(/^https:\/\/github\.com\/([^\/]+)\/([^\/\?]+)[\/\?]?/);
+    const githubOrg = match[1];
+    const githubRepoName = match[2];
+
+    const issueUrl = `https://github.com/${githubOrg}/${githubRepoName}/issues/new?title=${issueTitle}&body=${issueBody}&labels=a11y-tracker`;
     window.open(issueUrl, "_self");
   });
 });

@@ -74,17 +74,8 @@ input[type="text"] {
   flex-direction: column;
 }
 
-#org {
-  width: 7em;
-}
-
-#repo {
-  width: 17em;
-}
-
-#spec-url-desc,
-#org-desc,
-#repo-desc {
+#spec-url-desc
+{
   font-size: 0.9rem;
   margin-top: 0.25rem;
 }

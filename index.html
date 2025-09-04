@@ -62,20 +62,10 @@
 
       <fieldset>
         <legend>GitHub repository of the document or spec being reviewed</legend>
-        <div class="inline-text-container">https://github.com/
-          <div class="inline-text-input">
-            <label for="org">Organisation:</label>
-            <input id="org" type="text" name="org" aria-describedby="org-desc" required />
-            <div id="org-desc">
-              e.g. "w3c"
-            </div>
-          </div>/<div class="inline-text-input">
-            <label for="repo">Repository:</label>
-            <input id="repo" type="text" name="repo" aria-describedby="repo-desc" required />
-            <div id="repo-desc">
-              e.g. "process"
-            </div>
-          </div>
+        <div class="grid-2c">
+          <label for="spec-repo">Repository:</label>
+          <input id="spec-repo" type="text" name="spec-repo" placeholder="https://github.com/<org>/<repo>" required />
+        </div>
       </fieldset>
 
       <fieldset>
@@ -238,7 +228,7 @@
             <li>
               a requirement for a user to perform a specific type of
               interaction in order to enable some aspect of the API (e.g.,
-              User Activation dependent)
+              <a href="https://developer.mozilla.org/en-US/docs/Web/Security/User_activation">user activation</a>-dependent)
             </li>
           </ul>
           <p>
