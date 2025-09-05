@@ -63,7 +63,7 @@ input[type="text"] {
   margin-block-end: 1em;
 }
 
-#spec-url-desc {
+#spec-url-desc, #spec-repo-format {
   font-size: 0.9rem;
   margin-top: 0.25rem;
 }

@@ -63,8 +63,11 @@
       <fieldset>
         <legend>GitHub repository of the document or spec being reviewed</legend>
         <div class="grid-2c">
-          <label for="spec-repo">Repository:</label>
-          <input id="spec-repo" type="text" name="spec-repo" placeholder="https://github.com/<org>/<repo>" required />
+          <label for="spec-repo">URL:</label>
+          <input id="spec-repo" type="text" name="spec-repo" aria-describedby="spec-repo-format" />
+        </div>
+        <div id="spec-repo-format"> 
+          <p><b>Format: </b><a href="https://github.com/">https://github.com</a>/&lt;org&gt;/&lt;repo&gt;</p>
         </div>
       </fieldset>
 
@@ -92,7 +95,7 @@
         <label for="q1_yes">Yes</label>
         <input type="radio" id="q1_no" name="q1" value="No" required aria-describedby="q1Description" />
         <label for="q1_no">No</label>
-        <input type="radio" id="q1_n/a" name="q1" value="N/A" required aria-describedby="q1Description" />
+        <input type="radio" id="q1_n/a" name="q1" value="N/A" required aria-describedby="q1Description" checked />
         <label for="q1_n/a">N/A</label>
 
         <details id="q2_details">
@@ -120,7 +123,7 @@
             <label for="q2_yes">Yes</label>
             <input type="radio" id="q2_no" name="q2" value="No" aria-describedby="q2Description" />
             <label for="q2_no">No</label>
-            <input type="radio" id="q2_na" name="q2" value="N/A" aria-describedby="q2Description" />
+            <input type="radio" id="q2_na" name="q2" value="N/A" aria-describedby="q2Description" checked />
             <label for="q2_na">N/A</label>
           </fieldset>
         </details>
@@ -151,7 +154,7 @@
         <label for="q3_yes">Yes</label>
         <input type="radio" id="q3_no" name="q3" value="No" required aria-describedby="q3Description" />
         <label for="q3_no">No</label>
-        <input type="radio" id="q3_n/a" name="q3" value="N/A" required aria-describedby="q3Description" />
+        <input type="radio" id="q3_n/a" name="q3" value="N/A" required aria-describedby="q3Description" checked />
         <label for="q3_n/a">N/A</label>
       </fieldset>
 
@@ -179,7 +182,7 @@
         <label for="q4_yes">Yes</label>
         <input type="radio" id="q4_no" name="q4" value="No" required aria-describedby="q4Description" />
         <label for="q4_no">No</label>
-        <input type="radio" id="q4_n/a" name="q4" value="N/A" required aria-describedby="q4Description" />
+        <input type="radio" id="q4_n/a" name="q4" value="N/A" required aria-describedby="q4Description" checked />
         <label for="q4_n/a">N/A</label>
       </fieldset>
 
@@ -208,7 +211,7 @@
         <label for="q5_yes">Yes</label>
         <input type="radio" id="q5_no" name="q5" value="No" required aria-describedby="q5Description" />
         <label for="q5_no">No</label>
-        <input type="radio" id="q5_n/a" name="q5" value="N/A" required aria-describedby="q5Description" />
+        <input type="radio" id="q5_n/a" name="q5" value="N/A" required aria-describedby="q5Description" checked />
         <label for="q5_n/a">N/A</label>
       </fieldset>
 
@@ -241,7 +244,7 @@
         <label for="q6_yes">Yes</label>
         <input type="radio" id="q6_no" name="q6" value="No" required aria-describedby="q6Description" />
         <label for="q6_no">No</label>
-        <input type="radio" id="q6_n/a" name="q6" value="N/A" required aria-describedby="q6Description" />
+        <input type="radio" id="q6_n/a" name="q6" value="N/A" required aria-describedby="q6Description" checked />
         <label for="q6_n/a">N/A</label>
       </fieldset>
 
@@ -268,7 +271,7 @@
           <label for="q7_yes">Yes</label>
           <input type="radio" id="q7_no" name="q7" value="No" aria-describedby="q7Description" />
           <label for="q7_no">No</label>
-          <input type="radio" id="q7_n/a" name="q7" value="N/A" aria-describedby="q7Description" required />
+          <input type="radio" id="q7_n/a" name="q7" value="N/A" aria-describedby="q7Description" required checked />
           <label for="q7_n/a">N/A</label>
         </fieldset>
       </details>

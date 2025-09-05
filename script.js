@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let selectedValue = "";
 
       inputs.forEach((input) => {
-        if (input.checked) {
+        if (input.checked && !selectedValue) {
           selectedValue = escapeMarkdown(input.value);
         }
       });
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (input.value === "Yes" && input.checked) {
         q2Details.open = true;
         form.q2.forEach((r) => (r.required = true));
-      } else if (input.value === "No" && input.checked) {
+      } else if ((input.value === "No" || input.value === "N/A") && input.checked) {
         q2Details.open = false;
         form.q2.forEach((r) => {
           r.required = false;
