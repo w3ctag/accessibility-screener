@@ -29,9 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const legend = fs.querySelector("legend");
       if (!legend) return;
 
-    let questionText = legend.textContent.trim().replace(/\n/g, " ");
-    questionText = questionText.replace(/\s+/g, " ");
-    questionText = questionText.replace(/\n/g, " "); 
+      let questionText = legend.textContent.trim().replace(/\s+/g, " ");
       const inputs = fs.querySelectorAll("input[type='radio']");
       let selectedValue = "";
 
